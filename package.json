@@ -28,6 +28,6 @@
     "jasmine-fix": "^1.0.1"
   },
   "dependencies": {
-
+    "sb-promisify": "^2.0.2"
   }
 }
