@@ -69,3 +69,11 @@ export function lockSync(path: string) {
 export function getLockedFiles(): Array<string> {
   return Array.from(lockedFiles)
 }
+
+export async function releaseAllLocks() {
+  await Promise.all(getLockedFiles().map(unlock))
+}
+
+export function releaseAllLocksSync() {
+  getLockedFiles().map(unlockSync)
+}
