@@ -31,7 +31,7 @@ export function getLockedFiles(): Array<string>
 
 ## Usage
 
-**Note:** This package does not automatically unlock the files on process exit, so you might want to release all locks on process exit or term
+**Note:** Locks become outdated as soon as the process exits regardless of if you release them manually. You **can** hook up `releaseAllLocksSync` on exit events to make your fs one file cleaner tho it's not necessary.
 
 ```js
 import { lock, isLocked, releaseAllLocksSync } from 'process-lockfile'
