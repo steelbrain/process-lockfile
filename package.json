@@ -1,0 +1,33 @@
+{
+  "name": "process-lockfile",
+  "version": "1.0.0",
+  "description": "Lockfiles for Node.js with extended capabilities",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "apm test",
+    "lint": "eslint .",
+    "clean": "rm -rf lib",
+    "compile": "npm run clean; babel src --out-dir lib",
+    "watch": "npm run compile -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steelbrain/process-lockfile.git"
+  },
+  "author": "steelbrain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steelbrain/process-lockfile/issues"
+  },
+  "homepage": "https://github.com/steelbrain/process-lockfile#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-steelbrain": "^5.0.0",
+    "eslint-config-steelbrain": "^4.0.1",
+    "flow-bin": "^0.44.0",
+    "jasmine-fix": "^1.0.1"
+  },
+  "dependencies": {
+
+  }
+}
