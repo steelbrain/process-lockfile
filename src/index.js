@@ -9,7 +9,7 @@ const lockedFiles = new Set()
 export async function isLocked(path: string): Promise<boolean> {
   try {
     await pfs.accessAsync(path, fs.R_OK)
-  } catch (_) { return true }
+  } catch (_) { return false }
   const contents = await pfs.readFileAsync(path, 'utf8')
   const pid = parseInt(contents, 10) || -1
   try {
@@ -23,7 +23,7 @@ export async function isLocked(path: string): Promise<boolean> {
 export function isLockedSync(path: string): boolean {
   try {
     pfs.accessSync(path, fs.R_OK)
-  } catch (_) { return true }
+  } catch (_) { return false }
   const contents = pfs.readFileSync(path, 'utf8')
   const pid = parseInt(contents, 10) || -1
   try {
